@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open EasyShare App</title>
+    <title>Open in Chrome</title>
 </head>
 <body>
-    <button onclick="openEasyShare()">Open EasyShare Vivo App</button>
+    <button onclick="openInChrome()">Open in Chrome</button>
 
     <script>
-        function openEasyShare() {
-            // Replace 'easyshare://open' with the correct URL scheme for EasyShare Vivo
-            const appUrl = 'easyshare://open';
-            const fallbackUrl = 'https://play.google.com/store/apps/details?id=com.vivo.easyshare'; // Fallback to Play Store
+        function openInChrome() {
+            // Replace the URL below with the desired website or content
+            const url = 'https://www.example.com';
 
-            // Try to open the app
-            window.location.href = appUrl;
+            // Intent URL for Chrome on Android
+            const intentUrl = `intent:${url}#Intent;package=com.android.chrome;scheme=https;end`;
 
-            // Fallback to Play Store after a short delay (if app is not installed)
-            setTimeout(() => {
-                window.location.href = fallbackUrl;
-            }, 1000);
+            // Redirect to the intent URL
+            window.location.href = intentUrl;
         }
     </script>
 </body>
