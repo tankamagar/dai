@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open EasyShare App</title>
+</head>
+<body>
+    <button onclick="openEasyShare()">Open EasyShare Vivo App</button>
+
+    <script>
+        function openEasyShare() {
+            // Replace 'easyshare://open' with the correct URL scheme for EasyShare Vivo
+            const appUrl = 'easyshare://open';
+            const fallbackUrl = 'https://play.google.com/store/apps/details?id=com.vivo.easyshare'; // Fallback to Play Store
+
+            // Try to open the app
+            window.location.href = appUrl;
+
+            // Fallback to Play Store after a short delay (if app is not installed)
+            setTimeout(() => {
+                window.location.href = fallbackUrl;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
